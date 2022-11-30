@@ -8,11 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		7D340C4D2937594C00737A00 /* RadioView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D340C4C2937594C00737A00 /* RadioView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D340C5629375B1300737A00 /* FRadioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340C5529375B1300737A00 /* FRadioAPI.swift */; };
+		7D340C5829375B3000737A00 /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340C5729375B3000737A00 /* FRadioPlayer.swift */; };
+		7D340C5A29375B3700737A00 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340C5929375B3700737A00 /* Reachability.swift */; };
+		7D340C6729375E2600737A00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D340C6629375E2600737A00 /* Images.xcassets */; };
+		7D340CC72937A7A100737A00 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CC42937A7A100737A00 /* RadioView.swift */; };
+		7D340CC92937A7A100737A00 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CC62937A7A100737A00 /* RadioPlayer.swift */; };
+		7D340CCB2937A7B600737A00 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D340CCA2937A7B600737A00 /* stations.json */; };
+		7D340CCE2937A7D200737A00 /* LocaleDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CCC2937A7D100737A00 /* LocaleDataFetcher.swift */; };
+		7D340CCF2937A7D200737A00 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CCD2937A7D100737A00 /* DataFetcherService.swift */; };
+		7D340CD32937A81A00737A00 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD02937A81A00737A00 /* Track.swift */; };
+		7D340CD42937A81A00737A00 /* SongInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD12937A81A00737A00 /* SongInfo.swift */; };
+		7D340CD52937A81A00737A00 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD22937A81A00737A00 /* RadioStation.swift */; };
+		7D340CD82937A82C00737A00 /* UIView + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD72937A82C00737A00 /* UIView + Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D340C492937594C00737A00 /* RadioView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RadioView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D340C4C2937594C00737A00 /* RadioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadioView.h; sourceTree = "<group>"; };
+		7D340C5529375B1300737A00 /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
+		7D340C5729375B3000737A00 /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
+		7D340C5929375B3700737A00 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		7D340C6629375E2600737A00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7D340CC42937A7A100737A00 /* RadioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		7D340CC62937A7A100737A00 /* RadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		7D340CCA2937A7B600737A00 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
+		7D340CCC2937A7D100737A00 /* LocaleDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleDataFetcher.swift; sourceTree = "<group>"; };
+		7D340CCD2937A7D100737A00 /* DataFetcherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		7D340CD02937A81A00737A00 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		7D340CD12937A81A00737A00 /* SongInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfo.swift; sourceTree = "<group>"; };
+		7D340CD22937A81A00737A00 /* RadioStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		7D340CD72937A82C00737A00 /* UIView + Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Shadow.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +72,69 @@
 			isa = PBXGroup;
 			children = (
 				7D340C4C2937594C00737A00 /* RadioView.h */,
+				7D340C6629375E2600737A00 /* Images.xcassets */,
+				7D340CC32937A7A100737A00 /* RadioView */,
+				7D340C6529375C5400737A00 /* JSON */,
+				7D340C6229375B9400737A00 /* Models */,
+				7D340C5B29375B4800737A00 /* FRadio */,
+				7D340C6C2937647800737A00 /* DataFetcher */,
+				7D340CD62937A82C00737A00 /* Extensions */,
 			);
 			path = RadioView;
+			sourceTree = "<group>";
+		};
+		7D340C5B29375B4800737A00 /* FRadio */ = {
+			isa = PBXGroup;
+			children = (
+				7D340C5729375B3000737A00 /* FRadioPlayer.swift */,
+				7D340C5529375B1300737A00 /* FRadioAPI.swift */,
+				7D340C5929375B3700737A00 /* Reachability.swift */,
+			);
+			path = FRadio;
+			sourceTree = "<group>";
+		};
+		7D340C6229375B9400737A00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D340CD22937A81A00737A00 /* RadioStation.swift */,
+				7D340CD12937A81A00737A00 /* SongInfo.swift */,
+				7D340CD02937A81A00737A00 /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7D340C6529375C5400737A00 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7D340CCA2937A7B600737A00 /* stations.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		7D340C6C2937647800737A00 /* DataFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				7D340CCD2937A7D100737A00 /* DataFetcherService.swift */,
+				7D340CCC2937A7D100737A00 /* LocaleDataFetcher.swift */,
+			);
+			path = DataFetcher;
+			sourceTree = "<group>";
+		};
+		7D340CC32937A7A100737A00 /* RadioView */ = {
+			isa = PBXGroup;
+			children = (
+				7D340CC42937A7A100737A00 /* RadioView.swift */,
+				7D340CC62937A7A100737A00 /* RadioPlayer.swift */,
+			);
+			path = RadioView;
+			sourceTree = "<group>";
+		};
+		7D340CD62937A82C00737A00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D340CD72937A82C00737A00 /* UIView + Shadow.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +180,7 @@
 				TargetAttributes = {
 					7D340C482937594C00737A00 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -119,6 +207,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D340CCB2937A7B600737A00 /* stations.json in Resources */,
+				7D340C6729375E2600737A00 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +219,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D340CD42937A81A00737A00 /* SongInfo.swift in Sources */,
+				7D340C5829375B3000737A00 /* FRadioPlayer.swift in Sources */,
+				7D340C5A29375B3700737A00 /* Reachability.swift in Sources */,
+				7D340CC92937A7A100737A00 /* RadioPlayer.swift in Sources */,
+				7D340CD32937A81A00737A00 /* Track.swift in Sources */,
+				7D340CCE2937A7D200737A00 /* LocaleDataFetcher.swift in Sources */,
+				7D340CCF2937A7D200737A00 /* DataFetcherService.swift in Sources */,
+				7D340CD82937A82C00737A00 /* UIView + Shadow.swift in Sources */,
+				7D340CC72937A7A100737A00 /* RadioView.swift in Sources */,
+				7D340CD52937A81A00737A00 /* RadioStation.swift in Sources */,
+				7D340C5629375B1300737A00 /* FRadioAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -243,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -258,6 +359,7 @@
 		7D340C512937594C00737A00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -268,6 +370,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -278,6 +381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +390,7 @@
 		7D340C522937594C00737A00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -296,6 +401,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

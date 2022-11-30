@@ -1,0 +1,30 @@
+{
+    "stations":
+    [
+     {
+     "name": "Absolute Country Hits",
+     "streamURL": "http://strm112.1.fm/acountry_mobile_mp3",
+     "desc": "The Music Starts Here"
+     },
+     {
+     "name": "Electro Swing Radio",
+     "streamURL": "https://electroswing-radio.com/electro_swing_revolution_radio.m3u",
+     "desc": "On Air Since 2012"
+     },
+     {
+     "name": "Radio Carcija",
+     "streamURL": "http://87.118.126.101:19406/listen.pls?sid=1",
+     "desc": "Vašu i Našu Radiocarsiju",
+     },
+     {
+     "name": "WRock",
+     "streamURL": "http://37.187.79.93:8248/listen.pls?sid=1",
+     "desc": "The Philipines Original Rock Radio"
+     },
+     {
+     "name": "The Rock FM",
+     "streamURL": "http://tunein-icecast.mediaworks.nz/rock_128kbps",
+     "desc": "Rock Music"
+     }
+    ]
+}
