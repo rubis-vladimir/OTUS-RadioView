@@ -24,8 +24,9 @@ final class LocalDataFetcher: DataFetcherProtocol {
     /// Декодирует их в значение типа `T`
     func fetchJSONData<T: Decodable>(from file: String,
                                      responce: @escaping (T) -> Void) {
-        guard let url = Bundle.main.url(forResource: file, withExtension: nil) else { return }
+        guard let url = Bundle(for: LocalDataFetcher.self).url(forResource: file, withExtension: nil) else { return }
 
+        print(url)
         guard let data = try? Data(contentsOf: url) else { return }
 
         do {

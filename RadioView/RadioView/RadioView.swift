@@ -57,7 +57,6 @@ public class RadioView: UIView {
     private lazy var stopButton: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "стоп вкл", in: Bundle(for: RadioView.self), compatibleWith: .current)
-        print("\(image) !!!")
         button.setImage(image, for: .selected)
         let image2 = UIImage(named: "стоп выкл", in: Bundle(for: RadioView.self), compatibleWith: .current)
         button.setImage(image, for: .selected)
