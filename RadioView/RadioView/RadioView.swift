@@ -56,8 +56,10 @@ public class RadioView: UIView {
     
     private lazy var stopButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "стоп вкл"), for: .selected)
-        button.setImage(UIImage(named: "стоп выкл"), for: .normal)
+        let image = UIImage(named: "стоп вкл", in: Bundle(identifier: "com.rubis-vladimir.TestNew.TestNew"), compatibleWith: .current)
+        button.setImage(image, for: .selected)
+        let image2 = UIImage(named: "стоп выкл", in: Bundle(identifier: "com.rubis-vladimir.TestNew.TestNew"), compatibleWith: .current)
+        button.setImage(image, for: .selected)
         button.addTarget(self, action: #selector(didPressStopButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
