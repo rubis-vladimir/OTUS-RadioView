@@ -25,8 +25,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "13.0"
   spec.source       = { :git => "https://github.com/rubis-vladimir/OTUS-RadioView.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "RadioView/**/*.{swift
-,h,m}"
+  spec.source_files  = "RadioView/**/*.{swift,h,m}"
   spec.resource_bundles = {
         "RadioView" => [ "RadioView/**/*.{lproj,xcdatamodeld,xib,json,ttf,xcassets}" ] }
 

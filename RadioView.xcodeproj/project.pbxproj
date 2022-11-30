@@ -72,9 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				7D340C4C2937594C00737A00 /* RadioView.h */,
-				7D340C6629375E2600737A00 /* Images.xcassets */,
 				7D340CC32937A7A100737A00 /* RadioView */,
-				7D340C6529375C5400737A00 /* JSON */,
+				7D340C6529375C5400737A00 /* Resources */,
 				7D340C6229375B9400737A00 /* Models */,
 				7D340C5B29375B4800737A00 /* FRadio */,
 				7D340C6C2937647800737A00 /* DataFetcher */,
@@ -103,12 +102,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		7D340C6529375C5400737A00 /* JSON */ = {
+		7D340C6529375C5400737A00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7D340C6629375E2600737A00 /* Images.xcassets */,
 				7D340CCA2937A7B600737A00 /* stations.json */,
 			);
-			path = JSON;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7D340C6C2937647800737A00 /* DataFetcher */ = {
