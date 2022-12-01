@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RadioView"
-  spec.version      = "0.0.13"
+  spec.version      = "0.0.15"
   spec.summary      = "OTUS Homework module for demonstrations"
 
 
