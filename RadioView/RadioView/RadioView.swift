@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import OtusHomework
 
 // Вью для наслаждения музыков из радиостанций ;)
 public class RadioView: UIView {
     
     //MARK: - Properties
-    private let localUrl = "stations.json"
     private let dataFetcher = DataFetcherService()
+    private let radioStationManager = RadioStationManager.shared
     private let radioPlayer = RadioPlayer()
     
-    private var stations: [RadioStation] = [] {
+    private let config = UIImage.SymbolConfiguration(pointSize: 20, weight: .light, scale: .large)
+    private let localUrl = "stations.json"
+    
+    private lazy var stations: [RadioStation] = [] {
         didSet {
             stationDidChange()
         }
@@ -24,13 +28,18 @@ public class RadioView: UIView {
     private var currentStation: RadioStation?
     private var currentTrack: Track?
     
+    private lazy var stack: UIStackView = {
+        let stack = UIStackView()
+        stack.distribution = .fillEqually
+        stack.spacing = 20
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
     private lazy var myFullNameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Rubis Vladimir"
         label.font = UIFont(name: "MarkerFelt-Thin", size: 36)
-        label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
     
@@ -39,27 +48,20 @@ public class RadioView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "MarkerFelt-Thin", size: 18)
         label.textColor = .systemGray
-        label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
 
     private lazy var  artistLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "MarkerFelt-Thin", size: 20)
         label.textColor = .black.withAlphaComponent(0.7)
-        label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
     
     private lazy var stopButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(named: "стоп вкл", in: Bundle(for: RadioView.self), compatibleWith: .current)
-        button.setImage(image, for: .selected)
-        let image2 = UIImage(named: "стоп выкл", in: Bundle(for: RadioView.self), compatibleWith: .current)
-        button.setImage(image, for: .selected)
+        button.setImage(UIImage(systemName: "stop.fill")?.withConfiguration(config), for: .selected)
+        button.setImage(UIImage(systemName: "stop")?.withConfiguration(config), for: .normal)
         button.addTarget(self, action: #selector(didPressStopButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -67,16 +69,16 @@ public class RadioView: UIView {
     
     private lazy var playingButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "плэй"), for: .normal)
-        button.setImage(UIImage(named: "пауза"), for: .selected)
+        button.setImage(UIImage(systemName: "play")?.withConfiguration(config), for: .normal)
+        button.setImage(UIImage(systemName: "pause")?.withConfiguration(config), for: .selected)
         button.addTarget(self, action: #selector(didPressPlayingButton), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
     private lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "вперед"), for: .normal)
+        button.setImage(UIImage(systemName: "forward")?.withConfiguration(config), for: .normal)
         button.addTarget(self, action: #selector(didPressNextButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -84,28 +86,39 @@ public class RadioView: UIView {
     
     private lazy var previousButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "назад"), for: .normal)
+        button.setImage(UIImage(systemName: "backward")?.withConfiguration(config), for: .normal)
         button.addTarget(self, action: #selector(didPressPreviousButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    // MARK: - Init
+    // MARK: - Init + LayoutSubviews
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
         radioPlayer.delegate = self
         setupView()
-        fetchStations(with: localUrl)
+        stations = radioStationManager.getStations()
+        fetchStations(from: localUrl)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        stack.layoutSubviews()
+        [previousButton, playingButton, stopButton, nextButton].forEach {
+            $0.layer.cornerRadius = $0.frame.height / 2
+        }
+    }
+    
     // MARK: - Public func
-    public func updateStations(with file: String) {
-        fetchStations(with: file)
+    // Подгрузить новые станции из файла
+    public func updateStations(from file: String) {
+        fetchStations(from: file)
     }
     
     // MARK: - Private func
@@ -121,13 +134,12 @@ public class RadioView: UIView {
         layer.cornerRadius = 20
         backgroundColor = .white
         
-        /// Cтэк для кнопок
-        let stack = UIStackView()
-        stack.distribution = .fillEqually
-        stack.spacing = 10
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        
+        /// Для кнопок
         [previousButton, playingButton, stopButton, nextButton].forEach{
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.backgroundColor = #colorLiteral(red: 0.9616639018, green: 0.956697166, blue: 0.9524772763, alpha: 1)
+            $0.tintColor = .black.withAlphaComponent(0.7)
+            $0.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 2, height: 2), shadowRadius: 2, shadowOpacity: 0.3)
             stack.addArrangedSubview($0)
         }
         
@@ -136,18 +148,20 @@ public class RadioView: UIView {
         stack2.spacing = 10
         stack2.translatesAutoresizingMaskIntoConstraints = false
         stack2.axis = .vertical
+        stack2.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 3, height: 3), shadowRadius: 3, shadowOpacity: 0.3)
+        stack2.backgroundColor = #colorLiteral(red: 0.9616639018, green: 0.956697166, blue: 0.9524772763, alpha: 1)
+        stack2.layer.cornerRadius = 20
         
         [myFullNameLabel, artistLabel, songLabel].forEach {
+            $0.numberOfLines = 0
+            $0.textAlignment = .center
             stack2.addArrangedSubview($0)
         }
-        
-        /// Изображение подложка
-        let songImageView: UIImageView = UIImageView(image: UIImage(named: "подложка"))
-        
+
         /// Общий контейнер
         let container = UIStackView()
         container.distribution = .fillProportionally
-        container.spacing = 10
+        container.spacing = 20
         container.axis = .vertical
         container.translatesAutoresizingMaskIntoConstraints = false
         
@@ -156,34 +170,27 @@ public class RadioView: UIView {
                             shadowRadius: 4,
                             shadowOpacity: 0.3)
         
-        [songImageView, stack].forEach{
+        [stack2, stack].forEach{
             container.addArrangedSubview($0)
         }
         
-        songImageView.addSubview(stack2)
         addSubview(container)
         
         /// Констрейнты
         NSLayoutConstraint.activate([
-            playingButton.heightAnchor.constraint(equalTo: playingButton.widthAnchor),
-            stopButton.heightAnchor.constraint(equalTo: playingButton.widthAnchor),
-            nextButton.heightAnchor.constraint(equalTo: playingButton.widthAnchor),
-            previousButton.heightAnchor.constraint(equalTo: playingButton.widthAnchor),
+            stack.heightAnchor.constraint(equalTo: playingButton.widthAnchor),
+            songLabel.heightAnchor.constraint(equalToConstant: 25),
             
-            stack2.topAnchor.constraint(equalTo: songImageView.topAnchor, constant: 20),
-            stack2.bottomAnchor.constraint(equalTo: songImageView.bottomAnchor, constant: -30),
-            stack2.leadingAnchor.constraint(equalTo: songImageView.leadingAnchor, constant: 20),
-            stack2.trailingAnchor.constraint(equalTo: songImageView.trailingAnchor, constant: -20),
-            
-            container.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            container.topAnchor.constraint(equalTo: topAnchor, constant: 24),
+            container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24),
+            container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
+        print(playingButton.frame.width, playingButton.frame.height)
     }
     
     // Подгружает радиостанции
-    private func fetchStations(with file: String) {
+    private func fetchStations(from file: String) {
         dataFetcher.fetchStations(localUrl: file) { [weak self] resp in
             self?.stations = resp.stations
         }
@@ -292,5 +299,16 @@ extension RadioView: RadioPlayerDelegate {
     
     func trackDidUpdate(_ track: Track?) {
         updateScreen(with: track)
+    }
+}
+
+// MARK: - HasOtusHomeworkView
+extension RadioView: HasOtusHomeworkView {
+    public var squareView: UIView? {
+        self
+    }
+    
+    public var squareViewController: UIViewController? {
+        nil
     }
 }

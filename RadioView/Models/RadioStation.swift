@@ -17,7 +17,7 @@ struct RadioStation: Codable {
     var streamURL: String
     var desc: String
     
-    init(name: String, streamURL: String, imageURL: String, desc: String, longDesc: String = "") {
+    init(name: String, streamURL: String, desc: String) {
         self.name = name
         self.streamURL = streamURL
         self.desc = desc

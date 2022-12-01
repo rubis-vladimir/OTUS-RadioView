@@ -21,6 +21,8 @@
 		7D340CD42937A81A00737A00 /* SongInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD12937A81A00737A00 /* SongInfo.swift */; };
 		7D340CD52937A81A00737A00 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD22937A81A00737A00 /* RadioStation.swift */; };
 		7D340CD82937A82C00737A00 /* UIView + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D340CD72937A82C00737A00 /* UIView + Shadow.swift */; };
+		7D451C5B2938C76600A4CDC5 /* OtusHomework in Frameworks */ = {isa = PBXBuildFile; productRef = 7D451C5A2938C76600A4CDC5 /* OtusHomework */; };
+		7D451C5D2938C78F00A4CDC5 /* RadioStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D451C5C2938C78F00A4CDC5 /* RadioStationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		7D340CD12937A81A00737A00 /* SongInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfo.swift; sourceTree = "<group>"; };
 		7D340CD22937A81A00737A00 /* RadioStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
 		7D340CD72937A82C00737A00 /* UIView + Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Shadow.swift"; sourceTree = "<group>"; };
+		7D451C5C2938C78F00A4CDC5 /* RadioStationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D451C5B2938C76600A4CDC5 /* OtusHomework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +120,7 @@
 			children = (
 				7D340CCD2937A7D100737A00 /* DataFetcherService.swift */,
 				7D340CCC2937A7D100737A00 /* LocaleDataFetcher.swift */,
+				7D451C5C2938C78F00A4CDC5 /* RadioStationManager.swift */,
 			);
 			path = DataFetcher;
 			sourceTree = "<group>";
@@ -165,6 +170,9 @@
 			dependencies = (
 			);
 			name = RadioView;
+			packageProductDependencies = (
+				7D451C5A2938C76600A4CDC5 /* OtusHomework */,
+			);
 			productName = RadioView;
 			productReference = 7D340C492937594C00737A00 /* RadioView.framework */;
 			productType = "com.apple.product-type.framework";
@@ -193,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 7D340C3F2937594C00737A00;
+			packageReferences = (
+				7D451C592938C76600A4CDC5 /* XCRemoteSwiftPackageReference "OtusHomework" */,
+			);
 			productRefGroup = 7D340C4A2937594C00737A00 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,6 +238,7 @@
 				7D340CCE2937A7D200737A00 /* LocaleDataFetcher.swift in Sources */,
 				7D340CCF2937A7D200737A00 /* DataFetcherService.swift in Sources */,
 				7D340CD82937A82C00737A00 /* UIView + Shadow.swift in Sources */,
+				7D451C5D2938C78F00A4CDC5 /* RadioStationManager.swift in Sources */,
 				7D340CC72937A7A100737A00 /* RadioView.swift in Sources */,
 				7D340CD52937A81A00737A00 /* RadioStation.swift in Sources */,
 				7D340C5629375B1300737A00 /* FRadioAPI.swift in Sources */,
@@ -439,6 +451,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D451C592938C76600A4CDC5 /* XCRemoteSwiftPackageReference "OtusHomework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NikkoGladkko/OtusHomework.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D451C5A2938C76600A4CDC5 /* OtusHomework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D451C592938C76600A4CDC5 /* XCRemoteSwiftPackageReference "OtusHomework" */;
+			productName = OtusHomework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D340C402937594C00737A00 /* Project object */;
 }
