@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RadioView"
-  spec.version      = "0.0.10"
+  spec.version      = "0.0.11"
   spec.summary      = "OTUS Homework module for demonstrations"
 
 
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "13.0"
   spec.source       = { :git => "https://github.com/rubis-vladimir/OTUS-RadioView.git", :tag => "#{spec.version}" }
 
-  spec.dependency 'OtusHomework', '~> 0.0.17'
+  spec.dependency 'OtusHomework', '~>1.0'
   spec.source_files  = "RadioView/**/*.{swift,h,m}"
 
   spec.public_header_files = "RadioView/**/*.h"
